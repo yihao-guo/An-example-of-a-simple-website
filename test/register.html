@@ -1,0 +1,68 @@
+<!doctype html> 
+<html> 
+<head> 
+<meta charset="UTF-8"> 
+<title>注册系统</title> 
+ <link rel="stylesheet" href="css/bootstrap.min.css">
+<style type="text/css"> 
+form { 
+  text-align: center; 
+  margin-left:60%;
+  margin-top:30%;
+} 
+#username{
+margin-left:100px;
+	margin-top:-150px;		
+}
+#password ,#assertpassword{
+	margin-top:30px;
+}
+.form-control{
+	margin-left:100px;
+	width:400px;
+	height:50px;
+}
+#button{
+	margin-left:30px;
+	width:180px;
+	height:60px;
+	
+}
+</style> 
+</head> 
+<body background="img/register-back.png"> 
+  
+  <form action="register.php" method="post" name="form_register"
+    onsubmit="return check()"> 
+    <input id="username" class="form-control type="text" name="username" ><br> 
+    <input id="password" class="form-control type="password" name="password"><br> 
+    <input id="assertpassword" class="form-control  type="password" name="assertpassword"><br> 
+    <input id="button" class="btn btn-dark" type="submit" value="submit"> 
+  
+  </form> 
+  
+  <script type="text/javascript"> 
+   
+      function check() { 
+      var username=document.getElementById("username").value; 
+     var password=document.getElementById("password").value; 
+     var assertpassword=document.getElementById("assertpassword").value; 
+        var regex=/^[/s]+$/;
+          
+        if(regex.test(username)||username.length==0){ 
+          alert("用户名格式不对"); 
+          return false; 
+        } 
+        if(regex.test(password)||password.length==0){ 
+          alert("密码格式不对"); 
+          return false;     
+        } 
+        if(password!=assertpassword){ 
+          alert("两次密码不一致"); 
+          return false; 
+        } 
+      } 
+    </script> 
+
+</body> 
+</html> 

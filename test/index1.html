@@ -1,0 +1,64 @@
+<p> 
+  </p><pre name="code" class="html"> 
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="UTF-8"> 
+<title>登录注册修改密码系统主页</title> 
+ <link rel="stylesheet" href="css/bootstrap.min.css">
+
+<style type="text/css"> 
+#button1{
+	margin-top:20px;
+	position:absolution;
+}
+#button2{
+	margin-top:-90px;
+	margin-left:-150px;
+	width:100px;
+	height:60px;
+	position:absolution;
+}
+form { 
+  text-align: center; 
+  width:400px;
+	margin-left:65%;
+	margin-top:-1%;
+	
+}
+</style> 
+</head> 
+<body background="img/back-login.png"> 
+<div id="form">
+  <form action="enter.php" method="post" onsubmit="return enter()"> 
+   <input class="form-control" type="text" name="username" id="username"><br> 
+   <input class="form-control" type="password" name="password" id="password"><br> 
+   <button id="button1" class="btn btn-primary  btn-sm btn-block" type="submit" value="登录"> 登陆</button>   
+   <button id="button2" class="btn btn-default  btn-lg btn-block" type="button" value="注册" onclick="register();">注册</button>
+  </form> 
+ </div> 
+  <script type="text/javascript"> 
+    function enter() 
+    { 
+      var username=document.getElementById("username").value;//获取form中的用户名 
+      var password=document.getElementById("password").value; 
+      var regex=/^[/s]+$/;//声明一个判断用户名前后是否有空格的正则表达式 
+      if(regex.test(username)||username.length==0)//判定用户名的是否前后有空格或者用户名是否为空 
+        { 
+          alert("用户名格式不对"); 
+          return false; 
+        } 
+      if(regex.test(password)||password.length==0)//同上述内容 
+      { 
+        alert("密码格式不对"); 
+        return false; 
+      } 
+      return true; 
+    } 
+    function register() 
+    { 
+      window.location.href="register.html";//跳转到注册页面 
+    } 
+  </script> 
+</body> 
+</html> 
